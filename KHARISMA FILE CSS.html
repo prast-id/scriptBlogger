@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html  lang="en"> 
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie-edge">
+		<title>Kharisma Coffee </title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+.MainTittle{display:flex;top:8vh;}
+#HeaderSpace{width:100%;display:flex;justify-content:center;height:8vh;background:black;opacity:0.8;position:fixed;transition:0.4s;}
+.LeftHeader{width:15%;display:flex;align-items:center;left:0%;height:8vh;color:blue;position:fixed;}
+.HeaderTittle{width:15%;height:8vh;display:flex;align-items:center;color:yellow;font-size:14px;}
+.MidHeader{width:63%;position:fixed;display:flex;left:15%;}
+.RightHeader{width:22%;height:8vh;right:0;position:fixed;}
+nav{width:51%;right:22%;position:fixed;height:8vh;display:flex;justify-content:flex-start;background:transparent;align-items:center;font-family:"kanit", san-serif;}
+			.nav-links{display:flex;list-style:none;width:96%;height:100%;justify-content:space-around;align-items:center;}
+			.nav-links li{display:flex;list-style:none;}
+			.nav-links li a{color:white;text-decoration:none;font-size:12px;}
+			.burger{display:none;cursor:pointer;}
+			.burger div{display:none;left:0px;width:24px;height:2px;margin:3px;background-color:white;}
+		@media screen and (max-width:1024px){
+		.nav-links{width:60%;}
+		}
+		@media screen and (max-width:768px){
+		body{overflow-x:hidden;}
+		.HeaderSpace{width:100%;display:flex;justify-content:center;height:8vh;position:fixed;background:black;opacity:0.6;}
+		.LeftHeader{width:80%;display:flex;background-color:transparent;left:66px;}
+		.HeaderTittle{width:15%;height:8vh;display:flex;align-items:center;color:yellow;font-size:14px;}
+		.MidHeader{width:95%;}
+		.RightHeader{display:none;width:2.5%;height:8vh;}
+		nav{width:95%;height:8vh;display:flex;justify-content:flex-start;align-items:center;font-family:"kanit", san-serif;left:2.5%;}
+			.nav-links{position:absolute;left:-10px;min-height:92vh;top:8vh;display:flex;flex-direction:column;align-items:center;width:68%;
+			transform:translate(-540px,0px);transition:transform 0.6s ease-in;background:black;opacity:1;}
+			.nav-links li{opacity:1;}
+			.nav-links li a{color:white;text-decoration:none;font-size:12px;}
+			.burger{display:block;left:15%;}
+			.burger div{display:block;left:0px;width:24px;height:2px;margin:3px;background-color:white;}
+		}
+		.nav-active{
+		transform:translateX(0%);background:black;opacity:1;}
+		
+	@keyframes navLinkFade{
+				from{opacity:0;transform:translateX(50px);}
+				to{opacity:1;transform:translateX(0px);}
+	}
+	
+	.toggle .line1{transform:rotate(-45deg) translate(-4px,3px);
+	}
+	.toggle .line2{opacity:0;
+	}
+	.toggle .line3{transform:rotate(45deg) translate(-4px,-3px);
+	}
+
+</style>
+<style>
+.imgbackground{width:100%;height:92vh;}
+.content{display:flex;width:100%;height:auto;padding-top:124px;background:#006400;align-items:flex-start;border-top:1px solid;border-color:#006400;}
+	.leftcontent{width:15%;}
+		.mainparagraph{width:63%;float:left;background:#006400;}
+		.header-paragraph{font-family:"verdana", san-serif;color:white;}
+		 p{text-align:justify;word-spacing:1px;font-size:17px;font-family:system-ui;color:#fffffe;padding-right:3.1%;padding-top:4px;padding-left:0px;
+		 padding-bottom:10px;}
+		.link-page{display:flex;width:100%;height:auto%;padding-top:21px;padding-bottom:10.2px;font-family:calibri;color:#dcdcdc;}
+		.imagepages{display:flex;width:100%;height:auto;padding-top:0px;padding-bottom:1px;padding-left:0px;padding-right:3.1%;}
+		.h4{text-align:left;}
+		.u{color:red;}
+		a{color:orange;font-family:verdana;word-spacing:1.2px;}
+		a:hover{color:yellow;}
+	.rightcontent{float:right;width:22%;padding-right:0.4%;height:auto;background:#006400;border-bottom:2px solid;border-color:#006400;font-style:none;}
+	.rightcontent a{font-size:13px;list-style:none;font-family:Kanit;, sans-serif;}
+		.p-header{color:#00ff00;}
+@media screen and (max-width:768px){
+.imgbackground{width:100%;height:auto;padding-top:8vh;}
+.content{display:flex;width:100%;height:auto;padding-top:92px;background:#006400;align-items:flex-start;border-top:1px solid;border-color:#006400;}
+	.leftcontent{width:2.5%;}
+		.mainparagraph{width:95%;float:left;background:#006400;}
+		 p{text-align:justify;word-spacing:1px;font-size:17px;font-family:system-ui;color:#fffffe;padding-right:0%;padding-top:4px;padding-left:0px;
+		 padding-bottom:10px;}
+		.link-page{display:flex;width:100%;height:auto%;padding-top:11px;padding-bottom:10.2px;font-family:calibri;color:#dcdcdc;}
+		.imagepages{display:flex;width:100%;height:auto;padding-top:0px;padding-bottom:1px;padding-left:0px;padding-right:0%;}
+		.h4{text-align:left;}
+		.u{color:red;}
+		a{color:orange;font-family:verdana;word-spacing:1.2px;}
+		a:hover{color:yellow;}
+	.rightcontent{float:right;width:2.5%;height:auto;background:#006400;border-bottom:2px solid;border-color:#006400;}
+	
+		.p-header{color:#00ff00;}
+}
+	</style>
+			
+			
+<style>		
+			 li a:hover{color:yellow;}
+      em{font-size:17.5px;color:#ff7c20;}
+      em1{font-size:10.5px;color:orange;}
+			 
+			
+			 img{width:100%;height:100%;padding-left:0px;}
+	</style>
+	<style>
+		.footer{display:flex;width:100%;height:21vh;background:#006400;align-items:center;justify-content:center;}
+		.footer-content{font-family:verdana;background:#006400;color:#ff8c00;padding-top:7.6vh;}
+	</style>
+	</head>
+<body>
+<div id="HeaderSpace">
+<div class="LeftHeader">
+</div>
+<div class="MidHeader">
+<div class="HeaderTittle">
+<h1 >Kharisma<em>Coffee</em></h1>
+</div>
+<nav>
+	<div class="burger" >
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+	</div>
+		<ul class="nav-links">
+				<li><a href="#">HOME</a></li>
+                <li><a href="#">FILE</a></li>
+              	<li><a href="#">GAME</a></li>
+              	<li><a href="#">EBOOK</a></li>
+              	<li><a href="#">DESTINATION</a></li>
+				<li><a href="#">CONTACT US</a></li>
+		</ul>
+</nav>
+</div>
+<div class="RightHeader">
+<img alt='A description of the image.' decoding='async' loading="lazy"
+				src="https://tronminingfarm.com/images/banners/728.gif"alt="" width="729" height="90" />
+</div>
+
+</div>
+
+	<div class="content">
+	<div class="leftcontent"><h1></h1></div>
+	<div class="mainparagraph">
+	
+	<h2 class="header-paragraph">Calm Your Mind, Rilex Your Heart and Get Your Happy</h2>
+	<p class="link-page">This is your destiny for getting what do you want for free, just letting life go accross all of the way. You are just doing what best for your life and getting the best as a your best way to realize your goals. This is Your
+						destiny that another don't have. What your goal is your mind, your life and your pure heart. Don't hear what other talk about what your goal
+						and just listen to your heart and trust to your mind that your life is yours and no one can realize it like what do you really want, keep positive on your mind that
+						that what was and what are your doing now is the best way to your life.
+	<a href="https://www.aticlix.net/?ref=Prast_id" target="_balnk"><h6>::: LEARN MORE !!</h6></a></p>
+	<a target="_blank" href="https://www.aticlix.net/?ref=Prast_id">
+	<img class="imagepages" alt='A description of the image.' decoding='async' loading="lazy" src="file:///D:/HTML FILE/FileBlogger.jpg" border="0" width="" height="" /></a>
+	
+	<h2 class="header-paragraph">You Will Never Know What Will happen Tomorrow</h2>
+	
+	<p class="link-page">Earn Up To 0.01 USD For Click Advertisements, Surveys, Offerwalls, Earn Up To 0.20 USD From Click GRID, Wacthing Videos, PTSU Offers, HideOut TV, Loot TV, O4A TV, ShortLinks and Many More..!! Minimum Withdraw 500 Points Fast Payment
+	<a target="_blank" href="https://www.clixtoyou.com/?ref=Prast_id"><h6>::: REGISTER HERE FOR FREE !!</h6></a></p>
+	<a target="_blank" href="https://www.clixtoyou.com/?ref=Prast_id">
+	<img class="imagepages" alt='A description of the image.' decoding='async' loading="lazy" src="file:///D:/HTML FILE/FileBlogger02.jpg" border="0" width="468" height="60" /></a>
+	<p class="link-page">The Minimum Cashout is 1 USD to Perfect Money, AirTM or Payeer wallet For Standart Member. 
+	Paying Up To 0.1 USD Per Click Advertisements, Offerwalls, Surveys, PTSU Offers and Many More. Sign Up With Email and Get Earning Online From This Site.
+	<a target="_blank" href="https://cordbux.com/?ref=Prast_id"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a target="_blank" href="https://cordbux.com/?ref=Prast_id">
+	<img class="imagepages" alt='A description of the image.' decoding='async' loading="lazy" src="file:///D:/HTML FILE/FileBlogger03.jpg" border="0" width="728" height="90"/></a>
+	<p class="link-page">You Can Withdraw Your Money Just 0.001 USD or 10 Tokens, Get Paid for Advertisements, Auto or Manual Faucet, Offerwalls, Free Mining and More!. 
+	This site is Really Legit You Get Money Very Fast From PTC Ads and Shortlinks. Sign Up With Email and Level Up More and More!
+	<a target="_blank" href="https://litecoinline.com/?r=38309"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a target="_blank" href="https://litecoinline.com/?r=38309">
+	<img class="imagepages" alt='A description of the image.' decoding='async' loading="lazy" src="file:///D:/HTML FILE/FileBlogger04.jpg"
+	border="0" width="728" height="90" /></a>
+	<p class="link-page">Earn USD From PTC, Staking Crypto, Surveys and More!. It is Very Simple to Withdraw or Sending Money To Your Lokal Wallet, 
+	Sign Up With Your Email Earn USD Now.
+	<a href="https://faucetpay.io/?r=4100905" target="_blank"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a href="https://faucetpay.io/?r=4100905" target="_blank">
+	<img class="imagepages" alt='A description of the image.' decoding='async' loading="lazy" src="file:///D:/HTML FILE/BloggerImage01.jpg"></a>
+	<p class="link-page">Best Earning Site for Mining Simulator Game, The Minimum Cashout is 1 USD Every Weekend. Get Free BTC, ETH and LTC from Mining Simulator Game.
+	Earn Money From PTC Ads, Offerwalls, Wacthing Videos, Free Faucet, Shortlinks and Many More. The Legit Earning Site Will Pay You More and More, 
+	The Higher You Level Up The Higher Bonus You Get
+	<a target="_blank" href="https://simplebits.io/ref/bYcXYBY0NW5L"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a target="_blank" href="https://simplebits.io/ref/bYcXYBY0NW5L">
+	<img class="imagepages" alt='A description of the image.' decoding='async' loading="lazy" src="file:///D:/HTML FILE/BloggerImage03.jpg"width="728" height="90"/></a>
+	
+	<p class="link-page">Earn USD by Wacthing Videos, Completing Surveys, Offerwalls, PTC Ads, PTSU etc. The Minimum Withdrawal Is 0.1 USD Fast Payment! Sign Up With email and Activate your Account on Email Box.
+	<a target="_blank" href="https://www.earnupline.com/?ref=Prast_id"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a target="_blank" href="https://www.earnupline.com/?ref=Prast_id">
+	<img class="imagepages" alt='A description of the image.' decoding='async' loading="lazy"src="file:///D:/HTML FILE/BloggerImage02.jpg" border="0" width="728" height="90" /></a>
+	<p class="link-page">It is Easy to Get Free Mining Tokens, Just Copy and Paste Your Binance Smart Chain BNB (BEP 20)
+	<a href="https://mine-bnb.com?ref=7924686468" target="_blank"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a href="https://mine-bnb.com?ref=7924686468" target="_blank">
+	<img class="imagepages"alt='A description of the image.' decoding='async'loading="lazy"src="file:///D:/HTML FILE/BloggerImage04.jpg"border="0" width="728" height="90"></a>
+	<p class="link-page">Earn Up To 0.02 Per Click, Fast Payment to Payeer Or Perfect Money, Many Earning Ways, Trusted and Experienced Admins
+	<a target="_blank" href="https://www.atiadvert.com/?ref=Prast_id"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a target="_blank" href="https://www.atiadvert.com/?ref=Prast_id">
+	<img class="imagepages"alt='A description of the image.' decoding='async'loading="lazy"src="file:///D:/HTML FILE/BloggerImage05.jpg" border="0" width="728" height="90" /></a>
+	<p class="link-page">Tired of inactive referrals or you just forgot to make clicks on PTC ads and cannot get earnings? This is the best choice for you! 
+	Start Work Today and Cashout Your Money Just 0.3 USD Try Now
+	<a target="_blank" href="https://everworkclix.com/?ref=Prast_id"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a target="_blank" href="https://everworkclix.com/?ref=Prast_id">
+	<img class="imagepages"alt='A description of the image.' decoding='async'loading="lazy"src="file:///D:/HTML FILE/BloggerImage06.jpg" border="0" width="468" height="60" /></a>
+	<p class="link-page">Trusted and Stable, This Site offers you the opportunity to earn money on a daily basis. Earn From PTC, Offerwalls, PTSU and More! Try Now
+	<a target="_blank" href="https://evergreenclix.com/?ref=Prast_id"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a target="_blank" href="https://evergreenclix.com/?ref=Prast_id">
+	<img class="imagepages"alt='A description of the image.' decoding='async'loading="lazy"src="file:///D:/HTML FILE/BloggerImage07.jpg" border="0" width="468" height="60" /></a>
+	<p class="link-page">EARN MONEY WITH MULTIPLE WAYS, Guaranteed daily ads, Up to 10$ Free Lotery Prizes, Unlimited earnings, Best Revenue Shares Pack, 
+	Instant payments 0.25 USD of Minimum Cashout!
+	<a target="_blank" href="https://everprofitbux.com/?ref=Prast_id"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a target="_blank" href="https://everprofitbux.com/?ref=Prast_id">
+	<img class="imagepages"alt='A description of the image.' decoding='async'loading="lazy"src="file:///D:/HTML FILE/BloggerImage08.jpg" border="0" width="468" height="60" /></a>
+	<p class="link-page">Earn Money by Taking Surveys, Installing Apps, Watching Videos, and More! 
+	PAYMENTS ACCEPTED: FaucetPay, Paypal, Airtm, Payeer, Perfect Money, AdvCash, CashApp, Zelle, Cryptocurrencies and others
+	<a target="_blank" href="https://challenge.gives/ref/Prast_id"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a target="_blank" href="https://challenge.gives/ref/Prast_id">
+	<img class="imagepages"alt='A description of the image.' decoding='async'loading="lazy"src="file:///D:/HTML FILE/BloggerImage09.jpg" border="0" width="468" height="60" /></a>
+	<p class="link-page">Make your life easier with crypto!! Start trading with our platform, earn free money by clicking ads, high paying survey, offerwalls and get a lot of bonuses
+	<a target="_blank" href="https://zetpay.eu/?ref=Prast_id"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a target="_blank" href="https://zetpay.eu/?ref=Prast_id">
+	<img class="imagepages"alt='A description of the image.' decoding='async'loading="lazy"src="file:///D:/HTML FILE/BloggerImage10.jpg" border="0" width="728" height="90" /></a>
+	<p class="link-page">First 10000 members will have $0.50 on their purchase balance to buy their first share FOR FREE!
+	<a target="_blank" href="https://www.sharebuxnow.com/ref/Prast_id"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a target="_blank" href="https://www.sharebuxnow.com/ref/Prast_id">
+	<img class="imagepages"alt='A description of the image.' decoding='async'loading="lazy"src="file:///D:/HTML FILE/FileBlogger.jpg" border="0" width="468" height="60" /></a>
+	<p class="link-page">Multiple Ways To Earn Money From Home! Earn up to $0.03 per click, Earn up to $0.01 per direct referral click, $2.00 minimum cashout, Instant Payments and Receiving System, No Investment needed to cashout
+	<a target="_blank" href="https://www.yougetprofit.com/?ref=prast_id"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a target="_blank" href="https://www.yougetprofit.com/?ref=prast_id">
+	<img class="imagepages"alt='A description of the image.' decoding='async'loading="lazy"src="file:///D:/HTML FILE/FileBlogger03.jpg" border="0" width="468" height="60" /></a>
+	<p class="link-page">As a member you can earn simply by Surveys, Games, Ads and many more! Effortless income, Earn from home, Guaranteed ads daily, Detailed statistics, Upgrade opportunities, ClixGrid + Offers, TOTAL PAID TO MEMBERS +$356,335.14
+	<a target="_blank" href="https://www.adzbazar.com/?ref=Prast_id"><h6>::: REGISTER HERE FOR FREE !!</h6></p>
+	<a target="_blank" href="https://www.adzbazar.com/?ref=Prast_id">
+	<img class="imagepages"src="file:///D:/HTML FILE/BloggerImage07.jpg" border="0" width="728" height="90" /></a></p>
+	</div>
+
+	<div class="rightcontent">
+	<p><a href='https://catmine.io/a/100770' target='_blank'>THE ULTIMATE MINING PLATFORM</a></p>
+	<a href='https://catmine.io/a/100770' target='_blank'><img alt='A description of the image.' class='img-contentright' decoding='async' loading='lazy' src='https://i.imgur.com/Px7lNgo.png' target='_blank'/></a>
+	
+</div>
+	</div>
+	<div class="footer">
+		<center class="footer-content"><h5>KharismaCoffee.Blogspot.com</h5></center>
+	</div>
+	<script>
+		const navSlide = () => {
+			const burger = document.querySelector('.burger');
+			const nav = document.querySelector('.nav-links');
+			const navLinks = document.querySelectorAll('.nav-links li');
+			burger.addEventListener('click',() => {
+			
+			//Toggle Nav
+			nav.classList.toggle('nav-active');
+			
+			//Animate Links
+			navLinks.forEach((link, RightToLeftNavigation) => {
+			if(link.style.animation){
+				link.style.animation = '';}
+			else{link.style.animation = 'navLinkFade 0.5s ease forwards $(RightToLeftNavigation / 16)s';}
+			});
+			
+			//Burger animation
+			burger.classList.toggle('toggle');
+		});
+	}
+			navSlide();
+			var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("HeaderSpace").style.top = "0";
+  } else {
+    document.getElementById("HeaderSpace").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+		</script>
+		<script>
+
+</script>
+</body>
+</html>
